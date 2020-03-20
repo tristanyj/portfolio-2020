@@ -1,5 +1,5 @@
 <template>
-	<div class="description-container">
+	<div class="description-container" data-scroll data-scroll-speed="1">
 		<div class="description">
 			<div class="line">
 				Hi, I’m <strong>Tristan</strong>, a web developer based in Paris.
@@ -19,7 +19,7 @@
 
 <style lang="stylus" scoped>
 	.description-container {
-		margin-top 160px
+		padding-bottom 40px
 		font-family 'Circular Book'
 
 		@media screen and (max-width: 500px) {

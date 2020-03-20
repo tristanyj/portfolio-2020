@@ -1,11 +1,9 @@
 <template>
-	<div class="container-page container-index">
+	<div class="container-page container-index" data-scroll-container>
 		<div class="content">
-			<topbar/>
-			<description/>
-			<projects/>
-			<contact/>
-			<bye/>
+			<intro :data="intro"/>
+			<projects :data="projects"/>
+			<outro :data="outro"/>
 		</div>
 	</div>
 </template>
@@ -16,8 +14,10 @@
 		margin 0 auto
 
 		.content {
+			position relative
 			padding 100px 70px
 			text-align center
+			z-index 1
 
 			@media screen and (max-width: 600px) {
 				padding	40px 20px
@@ -27,59 +27,84 @@
 </style>
 
 <script>
-	import inViewport from 'in-viewport'
+	import { mapGetters } from 'vuex'
 	import { TimelineLite } from 'gsap'
 
-	import topbar from '~/components/top/topbar'
-	import description from '~/components/content/description'
+	import intro from '~/components/top/intro'
 	import projects from '~/components/content/projects'
-	import contact from '~/components/bottom/contact'
-	import bye from '~/components/bottom/bye'
+	import outro from '~/components/bottom/outro'
 
 	export default {
 		components: {
-			topbar,
-			description,
+			intro,
 			projects,
-			contact,
-			bye
+			outro
 		},
-		// data() {
-		// 	return {
-		// 		current: 0
-		// 	}
-		// },
+		data() {
+			return {
+				current: {
+					section: {
+						index: undefined,
+						type: ''
+					}
+				}
+			}
+		},
+		computed: {
+			...mapGetters({
+				sections: 'GET_SECTIONS'
+			}),
+			intro() {
+				return this.sections.filter(section => section.type === 'intro')[0]
+			},
+			outro() {
+				return this.sections.filter(section => section.type === 'outro')[0]
+			},
+			projects() {
+				return this.sections.filter(section => section.type === 'project')
+			}
+		},
+		methods: {
+			checkCurrentSection(e) {
+				for(let i = 0; i < this.sectionsDOM.length; i++) {
+					const section = this.sectionsDOM[i]
+
+					if(e.scroll.y < section.getBoundingClientRect().top + e.scroll.y + section.getBoundingClientRect().height - window.innerHeight / 2) {
+						this.current.section.index = i
+
+						if(!section.classList.contains('active')) {
+							this.sectionsDOM.forEach(s => s.classList.remove('active'))
+							section.classList.add('active')
+						}
+
+						break
+					}
+				}
+			}
+		},
 		mounted() {
-			// const tl = new TimelineLite({
-			// 	paused: true
-			// })
+			this.$nuxt.$nextTick(() => {
+				this.sectionsDOM = Array.from(document.querySelectorAll('.section-container'))
 
-			// tl.fromTo('.name', 0.75, { opacity: 0 }, { opacity: 0.4 }, 0)
-			// tl.staggerFromTo('.socials-container .link', 0.75, { opacity: 0 }, { opacity: 0.4 }, 0.1, 0)
-			// tl.fromTo('.title', 0.75, { opacity: 0 }, { opacity: 1 }, 0)
-			// tl.fromTo('.description', 0.75, { opacity: 0 }, { opacity: 0.8 }, 0.2)
+				this.scroll = new LocomotiveScroll({
+					el: document.querySelector('[data-scroll-container]'),
+					smooth: true,
+					getSpeed: true
+				})
 
-			// this.$nuxt.$on('FINISHED_LOADING', () => {
-			// 	const revealElements = Array.from(document.querySelectorAll('.grid-item img'))
+				this.scroll.on('scroll', (e) => {
+					this.checkCurrentSection(e)
+				})
 
-			// 	revealElements.forEach((el, i) => {
-			// 		let dataset = el.dataset
-			// 		let opacity = dataset.opacity ? parseFloat(dataset.opacity).toFixed(1) : 1
-			// 		let delay = dataset.delay ? parseFloat(dataset.delay).toFixed(1) : 0
-			// 		let distance = dataset.distance ? parseFloat(dataset.distance).toFixed(1) : 80
-
-			// 		inViewport(el, () => {
-			// 			this.current++
-
-			// 			delay = this.current % 3 * 0.1
-
-			// 			const tl = new TimelineLite()
-			// 			tl.fromTo(el, 1.2, {y: distance, autoAlpha: 0}, {y: 0, autoAlpha: opacity, ease: Power3.easeOut}, delay)
-			// 		})
-			// 	})
-
-			// 	tl.play()
-			// })
+				// this.scroll.on('call', func => {
+				// 	console.log(func)
+				// })
+			})
 		}
 	}
 </script>
+
+
+
+
+

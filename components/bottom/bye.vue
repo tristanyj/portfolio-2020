@@ -1,5 +1,5 @@
 <template>
-	<div class="bye-container">
+	<div class="bye-container" data-scroll data-scroll-speed="0">
 		<div class="bye">
 			<span>Have a good day</span>
 			<img src="~/assets/images/waving-hand.png" alt="">

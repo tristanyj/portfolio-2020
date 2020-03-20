@@ -26,14 +26,7 @@
 		-webkit-font-smoothing antialiased
 		box-sizing border-box
 	}
-
-	// body {
-	// 	overflow hidden
-	// }
-
-	.__layout-wrapper {
-		// background #A59BFA
-	}
+	.__layout-wrapper {}
 
 	*,
 	*:before,
