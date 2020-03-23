@@ -9,18 +9,26 @@ export const state = () => ({
 			squares: [
 				{
 					position: {
-						top: 50,
-						left: 20
+						top: 35,
+						left: 17
 					},
 					size: {
-						width: 200,
+						width: 225,
 						height: 300
 					},
 					images: [
 						{
 							type: 'img',
-							src: ''
-						}
+							src: 'images/me-1.jpg',
+							size: {
+								width: 225,
+								height: 300
+							}
+						},
+						{
+							type: 'img',
+							src: 'images/oli-2.jpeg',
+						},
 					],
 					speed: -1,
 					direction: 1,
@@ -28,39 +36,28 @@ export const state = () => ({
 				},
 				{
 					position: {
-						top: 7,
-						left: 77
+						top: 78,
+						left: 84
 					},
 					size: {
-						width: 400,
+						width: 325,
 						height: 200
 					},
 					images: [
 						{
 							type: 'img',
-							src: ''
-						}
-					],
-					speed: 4,
-					direction: 1,
-					classNames: ['']
-				},
-				{
-					position: {
-						top: 90,
-						left: 100
-					},
-					size: {
-						width: 300,
-						height: 400
-					},
-					images: [
+							src: 'images/bepop-1.gif',
+							size: {
+								width: 325,
+								height: 200
+							}
+						},
 						{
 							type: 'img',
-							src: ''
-						}
+							src: 'images/bepop-1.gif'
+						},
 					],
-					speed: -2,
+					speed: -1,
 					direction: 1,
 					classNames: ['']
 				},
@@ -75,20 +72,47 @@ export const state = () => ({
 			squares: [
 				{
 					position: {
-						top: 30,
+						top: 40,
 						left: 15
 					},
 					size: {
-						width: 300,
+						width: 225,
+						height: 225
+					},
+					images: [
+						{
+							type: 'img',
+							src: 'images/me-1.jpg',
+							size: {
+								width: 225,
+								height: 300
+							}
+						},
+					],
+					speed: 4,
+					direction: 1,
+					classNames: ['']
+				},
+				{
+					position: {
+						top: 70,
+						left: 85
+					},
+					size: {
+						width: 200,
 						height: 300
 					},
 					images: [
 						{
 							type: 'img',
-							src: ''
-						}
+							src: 'images/me-1.jpg',
+							size: {
+								width: 225,
+								height: 300
+							}
+						},
 					],
-					speed: 4,
+					speed: 2,
 					direction: 1,
 					classNames: ['']
 				}
@@ -136,10 +160,37 @@ export const state = () => ({
 					images: [
 						{
 							type: 'img',
-							src: ''
-						}
+							src: 'images/me-1.jpg',
+							size: {
+								width: 225,
+								height: 300
+							}
+						},
 					],
 					speed: 4,
+					direction: 1,
+					classNames: ['']
+				},
+				{
+					position: {
+						top: 70,
+						left: 0
+					},
+					size: {
+						width: 200,
+						height: 300
+					},
+					images: [
+						{
+							type: 'img',
+							src: 'images/me-1.jpg',
+							size: {
+								width: 225,
+								height: 300
+							}
+						},
+					],
+					speed: -2,
 					direction: 1,
 					classNames: ['']
 				}
@@ -174,6 +225,54 @@ export const state = () => ({
 				'stylus',
 				'gsap',
 				'swiper'
+			],
+			squares: [
+				{
+					position: {
+						top: 40,
+						left: 90
+					},
+					size: {
+						width: 200,
+						height: 300
+					},
+					images: [
+						{
+							type: 'img',
+							src: 'images/me-1.jpg',
+							size: {
+								width: 225,
+								height: 300
+							}
+						},
+					],
+					speed: -3,
+					direction: 1,
+					classNames: ['']
+				},
+				{
+					position: {
+						top: 70,
+						left: 25
+					},
+					size: {
+						width: 200,
+						height: 300
+					},
+					images: [
+						{
+							type: 'img',
+							src: 'images/me-1.jpg',
+							size: {
+								width: 225,
+								height: 300
+							}
+						},
+					],
+					speed: -3,
+					direction: 1,
+					classNames: ['']
+				}
 			]
 		},
 		{
@@ -207,6 +306,54 @@ export const state = () => ({
 				'smoothscroll',
 				'pub-sub.js',
 				'stylus'
+			],
+			squares: [
+				{
+					position: {
+						top: 60,
+						left: 100
+					},
+					size: {
+						width: 200,
+						height: 300
+					},
+					images: [
+						{
+							type: 'img',
+							src: 'images/me-1.jpg',
+							size: {
+								width: 225,
+								height: 300
+							}
+						},
+					],
+					speed: 4,
+					direction: 1,
+					classNames: ['']
+				},
+				{
+					position: {
+						top: 80,
+						left: 10
+					},
+					size: {
+						width: 200,
+						height: 300
+					},
+					images: [
+						{
+							type: 'img',
+							src: 'images/me-1.jpg',
+							size: {
+								width: 225,
+								height: 300
+							}
+						},
+					],
+					speed: 2,
+					direction: 1,
+					classNames: ['']
+				},
 			]
 		},
 		{
@@ -234,6 +381,54 @@ export const state = () => ({
 				'swiper',
 				'scrollreveal',
 				'vanillajs'
+			],
+			squares: [
+				{
+					position: {
+						top: 70,
+						left: 85
+					},
+					size: {
+						width: 200,
+						height: 300
+					},
+					images: [
+						{
+							type: 'img',
+							src: 'images/me-1.jpg',
+							size: {
+								width: 225,
+								height: 300
+							}
+						},
+					],
+					speed: -2,
+					direction: 1,
+					classNames: ['']
+				},
+				{
+					position: {
+						top: 85,
+						left: 20
+					},
+					size: {
+						width: 200,
+						height: 300
+					},
+					images: [
+						{
+							type: 'img',
+							src: 'images/me-1.jpg',
+							size: {
+								width: 225,
+								height: 300
+							}
+						},
+					],
+					speed: 1,
+					direction: 1,
+					classNames: ['']
+				}
 			]
 		},
 		{
@@ -263,6 +458,77 @@ export const state = () => ({
 				'vanillajs',
 				'compass',
 				'html5'
+			],
+			squares: [
+				{
+					position: {
+						top: 60,
+						left: 60
+					},
+					size: {
+						width: 300,
+						height: 200
+					},
+					images: [
+						{
+							type: 'img',
+							src: 'images/me-1.jpg',
+							size: {
+								width: 225,
+								height: 300
+							}
+						},
+					],
+					speed: 4,
+					direction: 1,
+					classNames: ['']
+				},
+				{
+					position: {
+						top: 85,
+						left: 90
+					},
+					size: {
+						width: 200,
+						height: 300
+					},
+					images: [
+						{
+							type: 'img',
+							src: 'images/me-1.jpg',
+							size: {
+								width: 225,
+								height: 300
+							}
+						},
+					],
+					speed: 2,
+					direction: 1,
+					classNames: ['']
+				},
+				{
+					position: {
+						top: 85,
+						left: 0
+					},
+					size: {
+						width: 250,
+						height: 300
+					},
+					images: [
+						{
+							type: 'img',
+							src: 'images/me-1.jpg',
+							size: {
+								width: 225,
+								height: 300
+							}
+						},
+					],
+					speed: -3,
+					direction: 1,
+					classNames: ['']
+				},
 			]
 		},
 		{
@@ -289,34 +555,107 @@ export const state = () => ({
 				'api',
 				'css grid',
 				'autosuggest'
+			],
+			squares: [
+				{
+					position: {
+						top: 70,
+						left: 100
+					},
+					size: {
+						width: 250,
+						height: 300
+					},
+					images: [
+						{
+							type: 'img',
+							src: 'images/me-1.jpg',
+							size: {
+								width: 225,
+								height: 300
+							}
+						},
+					],
+					speed: 3,
+					direction: 1,
+					classNames: ['']
+				},
+				{
+					position: {
+						top: 60,
+						left: 40
+					},
+					size: {
+						width: 300,
+						height: 200
+					},
+					images: [
+						{
+							type: 'img',
+							src: 'images/me-1.jpg',
+							size: {
+								width: 225,
+								height: 300
+							}
+						},
+					],
+					speed: -2,
+					direction: 1,
+					classNames: ['']
+				}
 			]
 		},
-		{
-			type: 'project',
-			status: 'soon',
-			title: 'HETIC Interne',
-			description: '',
-			link: '',
-			date: '',
-			role: [''],
-			colors: {
-				background: '',
-				text: ''
-			},
-			images: {
-				cover: '',
-				all: [
-					'',
-					''
-				]
-			},
-			tech: [
-				'prismic',
-				'vue.js',
-				'nuxt.js',
-				'blog'
-			]
-		}
+		// {
+		// 	type: 'project',
+		// 	status: 'soon',
+		// 	title: 'HETIC Interne',
+		// 	description: '',
+		// 	link: '',
+		// 	date: '',
+		// 	role: [''],
+		// 	colors: {
+		// 		background: '',
+		// 		text: ''
+		// 	},
+		// 	images: {
+		// 		cover: '',
+		// 		all: [
+		// 			'',
+		// 			''
+		// 		]
+		// 	},
+		// 	tech: [
+		// 		'prismic',
+		// 		'vue.js',
+		// 		'nuxt.js',
+		// 		'blog'
+		// 	],
+		// 	squares: [
+		// 		{
+		// 			position: {
+		// 				top: 55,
+		// 				left: 50
+		// 			},
+		// 			size: {
+		// 				width: 250,
+		// 				height: 300
+		// 			},
+		// 			images: [
+		// 				{
+		// 					type: 'img',
+		// 					src: 'images/me-1.jpg',
+		// 					size: {
+		// 						width: 225,
+		// 						height: 300
+		// 					}
+		// 				},
+		// 			],
+		// 			speed: -2,
+		// 			direction: 1,
+		// 			classNames: ['']
+		// 		},
+		// 	]
+		// }
 	],
 	socials: [
 		{

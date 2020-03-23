@@ -1,16 +1,20 @@
 <template>
 	<div class="__layout-wrapper main">
 		<!-- <loading/> -->
+		<!-- <canvasTemp/>
+		<div class="overlay"></div> -->
 		<nuxt/>
 	</div>
 </template>
 
 <script>
+	import canvasTemp from '~/components/canvas-temp'
 	import loading from '~/components/loading'
 
 	export default {
 		components: {
-			loading
+			loading,
+			canvasTemp
 		}
 	}
 </script>
@@ -26,7 +30,18 @@
 		-webkit-font-smoothing antialiased
 		box-sizing border-box
 	}
-	.__layout-wrapper {}
+	.__layout-wrapper {
+		// color #fff
+
+		.overlay {
+			position fixed
+			top 0
+			left 0
+			width 100%
+			height 100%
+			background rgba(0, 0, 0, 0.7)
+		}
+	}
 
 	*,
 	*:before,

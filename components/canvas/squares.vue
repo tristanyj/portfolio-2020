@@ -1,6 +1,6 @@
 <template>
 	<div class="squares-container">
-		<square v-for="(square, i) in data" :key="i + Math.random()" :data="square"/>
+		<!-- <square v-for="(square, i) in data" :key="i + Math.random()" :data="square"/> -->
 	</div>
 </template>
 
@@ -11,6 +11,7 @@
 		left 0
 		width 100%
 		height 100%
+		opacity 0.75
 	}
 </style>
 

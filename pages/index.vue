@@ -75,6 +75,8 @@
 						if(!section.classList.contains('active')) {
 							this.sectionsDOM.forEach(s => s.classList.remove('active'))
 							section.classList.add('active')
+
+							this.$nuxt.$emit('CHANGE_PROJECT')
 						}
 
 						break
@@ -93,12 +95,11 @@
 				})
 
 				this.scroll.on('scroll', (e) => {
+					const progress = 360 * e.scroll.y / e.limit
+					// this.scroll.el.style.backgroundColor = `hsl(${progress}, 11%, 71%)`
+
 					this.checkCurrentSection(e)
 				})
-
-				// this.scroll.on('call', func => {
-				// 	console.log(func)
-				// })
 			})
 		}
 	}

@@ -40,7 +40,7 @@
 				.title {
 					font-family 'Circular Medium'
 					font-size 124px
-					color #fff
+					color rgba(255, 255, 255, 0)
 					-webkit-text-stroke-width 1px
 					-webkit-text-stroke-color black
 					transition 0.35s all ease
@@ -121,7 +121,7 @@
 				&.soon {
 					.title-container {
 						.title {
-							color #000
+							color #black
 							opacity 0.045
 						}
 					}

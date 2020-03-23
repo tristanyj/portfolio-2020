@@ -1,8 +1,8 @@
 <template>
 	<div class="square-container" :style="{ top: `${ data.position.top }%`, left: `${ data.position.left }%` }">
-		<div class="canvas-wrapper" data-scroll :data-scroll-speed="data.speed" :style="{ width: `${ data.size.width }px`, height: `${ data.size.height }px` }">
-			<div class="canvas-container">
-				<canvas></canvas>
+		<div class="canvas-wrapper" :style="{ width: `${ data.size.width }px`, height: `${ data.size.height }px` }">
+			<div class="square-wrapper" data-scroll :data-scroll-speed="data.speed">
+				<square-canvas v-if="data.images" :size="data.size" :images="data.images"/>
 			</div>
 		</div>
 	</div>
@@ -14,28 +14,24 @@
 		transform translate(-50%, -50%)
 
 		.canvas-wrapper {
-			width 200px
-			height 300px
-			background #ccc
-			border-radius 5px
-
-			.canvas-container {
-				canvas {
-
-				}
+			.square-wrapper {
+				height 100%
+				// background #ccc
 			}
 		}
 	}
 </style>
 
 <script>
+	import canvas from '~/components/canvas/canvas'
+
 	export default {
 		name: 'square',
 		props: ['data'],
-		methods: {
-			onClick() {
-				console.log('click')
-			}
+		components: {
+			'square-canvas': canvas
+		},
+		mounted() {
 		}
 	}
 </script>

@@ -20,7 +20,7 @@
 
 		div {
 			font-size 14px
-			opacity 0.75
+			// opacity 0.75
 			font-family 'Circular Book'
 			padding-bottom 5px
 			color black

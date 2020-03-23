@@ -30,7 +30,7 @@
 
 		.line {
 			line-height 310%
-			opacity 0.75
+			// opacity 0.75
 			font-size 16px
 
 			strong {
