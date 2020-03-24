@@ -1,6 +1,5 @@
 <template>
-	<div class="intro-container section-container">
-		<squares :data="data.squares"/>
+	<div class="intro-container section-container" :data-color-background="data.colors.background">
 		<topbar/>
 		<description/>
 		<thumbs-down/>
@@ -14,8 +13,8 @@
 		flex-direction column
 		justify-content space-between
 		height calc(100vh - 100px)
-		padding-top 25px
-		padding-bottom 150px
+		// padding-top 25px
+		padding-bottom 120px
 	}
 </style>
 

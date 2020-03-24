@@ -10,23 +10,15 @@
 
 <style lang="stylus" scoped>
 	.marquee-container {
-		position absolute
-		top calc(100%)
-		left 50%
-		width 97%
-		transform translateX(-50%)
+		width 100%
 		overflow-x hidden
-		padding-top 20px
+		padding-top 5px
 
 		div {
 			font-size 14px
-			// opacity 0.75
+			opacity 0.75
 			font-family 'Circular Book'
 			padding-bottom 5px
-			color black
-			-webkit-text-fill-color black /* Will override color (regardless of order) */
-			-webkit-text-stroke-width 0px
-			-webkit-text-stroke-color black
 		}
 
 		span {

@@ -20,8 +20,7 @@ module.exports = {
 			{ rel: 'apple-touch-icon', sizes: '180x180', href: '/favicon/apple-touch-icon.png' },
 			{ rel: 'manifest', href: '/favicon/site.webmanifest' },
 			{ rel: 'mask-icon', href: '/favicon/safari-pinned-tab.svg', color: '#5bbad5' }
-		],
-		script: []
+		]
 	},
 
 	/*
@@ -40,7 +39,7 @@ module.exports = {
 	** Plugins to load before mounting the App
 	*/
 	plugins: [
-		{ src: '~/plugins/locomotive-scroll.js', mode: 'client' }
+		{ src: '~/plugins/locomotive-scroll', mode: 'client' }
 	],
 
 	/*

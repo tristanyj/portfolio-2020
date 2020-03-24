@@ -16,7 +16,7 @@
 			justify-content center
 			align-items center
 			font-family 'Circular Book'
-			font-size 12px
+			font-size 14px
 
 			span {
 				position relative

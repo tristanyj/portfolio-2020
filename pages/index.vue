@@ -12,6 +12,9 @@
 	.container-index {
 		max-width 1920px
 		margin 0 auto
+		background hsl(45, 40%, 95%)
+		// background hsl(0, 10%, 80%)
+		transition 0.3s background ease
 
 		.content {
 			position relative
@@ -29,6 +32,8 @@
 <script>
 	import { mapGetters } from 'vuex'
 	import { TimelineLite } from 'gsap'
+
+	import Filter from '~/assets/scripts/Filter'
 
 	import intro from '~/components/top/intro'
 	import projects from '~/components/content/projects'
@@ -76,6 +81,8 @@
 							this.sectionsDOM.forEach(s => s.classList.remove('active'))
 							section.classList.add('active')
 
+							this.scroll.el.style.backgroundColor = `hsl(${ section.dataset.colorBackground }, 40%, 95%)`
+
 							this.$nuxt.$emit('CHANGE_PROJECT')
 						}
 
@@ -94,11 +101,18 @@
 					getSpeed: true
 				})
 
+				this.filter = new Filter()
+
 				this.scroll.on('scroll', (e) => {
 					const progress = 360 * e.scroll.y / e.limit
-					// this.scroll.el.style.backgroundColor = `hsl(${progress}, 11%, 71%)`
+					// this.scroll.el.style.backgroundColor = `hsl(${progress}, 38%, 95%)`
 
 					this.checkCurrentSection(e)
+
+					this.filter.scroll = {
+						x: 0,
+						y: e.scroll.y
+					}
 				})
 			})
 		}

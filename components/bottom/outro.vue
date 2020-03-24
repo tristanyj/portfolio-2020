@@ -1,6 +1,5 @@
 <template>
-	<div class="outro-container section-container">
-		<squares :data="data.squares"/>
+	<div class="outro-container section-container" :data-color-background="data.colors.background">
 		<contact/>
 		<bye/>
 	</div>

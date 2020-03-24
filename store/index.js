@@ -3,131 +3,41 @@ export const state = () => ({
 		{
 			type: 'intro',
 			colors: {
-				background: '',
+				background: 360 * 1 / 8,
 				text: ''
-			},
-			squares: [
-				{
-					position: {
-						top: 35,
-						left: 17
-					},
-					size: {
-						width: 225,
-						height: 300
-					},
-					images: [
-						{
-							type: 'img',
-							src: 'images/me-1.jpg',
-							size: {
-								width: 225,
-								height: 300
-							}
-						},
-						{
-							type: 'img',
-							src: 'images/oli-2.jpeg',
-						},
-					],
-					speed: -1,
-					direction: 1,
-					classNames: ['']
-				},
-				{
-					position: {
-						top: 78,
-						left: 84
-					},
-					size: {
-						width: 325,
-						height: 200
-					},
-					images: [
-						{
-							type: 'img',
-							src: 'images/bepop-1.gif',
-							size: {
-								width: 325,
-								height: 200
-							}
-						},
-						{
-							type: 'img',
-							src: 'images/bepop-1.gif'
-						},
-					],
-					speed: -1,
-					direction: 1,
-					classNames: ['']
-				},
-			]
+			}
 		},
 		{
 			type: 'outro',
 			colors: {
-				background: '',
+				background: 360 * 2 / 8,
 				text: ''
-			},
-			squares: [
-				{
-					position: {
-						top: 40,
-						left: 15
-					},
-					size: {
-						width: 225,
-						height: 225
-					},
-					images: [
-						{
-							type: 'img',
-							src: 'images/me-1.jpg',
-							size: {
-								width: 225,
-								height: 300
-							}
-						},
-					],
-					speed: 4,
-					direction: 1,
-					classNames: ['']
-				},
-				{
-					position: {
-						top: 70,
-						left: 85
-					},
-					size: {
-						width: 200,
-						height: 300
-					},
-					images: [
-						{
-							type: 'img',
-							src: 'images/me-1.jpg',
-							size: {
-								width: 225,
-								height: 300
-							}
-						},
-					],
-					speed: 2,
-					direction: 1,
-					classNames: ['']
-				}
-			]
+			}
 		},
 		{
 			type: 'project',
 			status: 'released',
 			title: 'Generative Gallery',
+			cover: {
+				src: 'images/b1.jpg',
+			},
+			scroll: {
+				speed: 0
+			},
+			number: {
+				top: 0,
+				left: 100
+			},
+			margin: {
+				top: 200,
+				bottom: 300
+			},
 			description: '',
 			link: '',
 			date: '',
 			role: [''],
 			colors: {
-				background: '',
+				background: 360 * 3 / 8,
 				text: ''
 			},
 			images: {
@@ -146,66 +56,32 @@ export const state = () => ({
 				'masonry',
 				'gsap',
 				'stylus'
-			],
-			squares: [
-				{
-					position: {
-						top: 57,
-						left: 70
-					},
-					size: {
-						width: 200,
-						height: 300
-					},
-					images: [
-						{
-							type: 'img',
-							src: 'images/me-1.jpg',
-							size: {
-								width: 225,
-								height: 300
-							}
-						},
-					],
-					speed: 4,
-					direction: 1,
-					classNames: ['']
-				},
-				{
-					position: {
-						top: 70,
-						left: 0
-					},
-					size: {
-						width: 200,
-						height: 300
-					},
-					images: [
-						{
-							type: 'img',
-							src: 'images/me-1.jpg',
-							size: {
-								width: 225,
-								height: 300
-							}
-						},
-					],
-					speed: -2,
-					direction: 1,
-					classNames: ['']
-				}
 			]
 		},
 		{
 			type: 'project',
 			status: 'released',
 			title: 'Generative Bicycle',
+			cover: {
+				src: 'images/b2.jpg',
+			},
+			scroll: {
+				speed: 1
+			},
+			number: {
+				top: -1,
+				left: 101
+			},
+			margin: {
+				top: 0,
+				bottom: 300
+			},
 			description: '',
 			link: '',
 			date: '',
 			role: [''],
 			colors: {
-				background: '',
+				background: 360 * 4 / 8,
 				text: ''
 			},
 			images: {
@@ -225,66 +101,32 @@ export const state = () => ({
 				'stylus',
 				'gsap',
 				'swiper'
-			],
-			squares: [
-				{
-					position: {
-						top: 40,
-						left: 90
-					},
-					size: {
-						width: 200,
-						height: 300
-					},
-					images: [
-						{
-							type: 'img',
-							src: 'images/me-1.jpg',
-							size: {
-								width: 225,
-								height: 300
-							}
-						},
-					],
-					speed: -3,
-					direction: 1,
-					classNames: ['']
-				},
-				{
-					position: {
-						top: 70,
-						left: 25
-					},
-					size: {
-						width: 200,
-						height: 300
-					},
-					images: [
-						{
-							type: 'img',
-							src: 'images/me-1.jpg',
-							size: {
-								width: 225,
-								height: 300
-							}
-						},
-					],
-					speed: -3,
-					direction: 1,
-					classNames: ['']
-				}
 			]
 		},
 		{
 			type: 'project',
 			status: 'released',
 			title: 'Sabrina Nedjah',
+			cover: {
+				src: 'images/b3.jpg',
+			},
+			scroll: {
+				speed: 2
+			},
+			number: {
+				top: 0,
+				left: 0
+			},
+			margin: {
+				top: 0,
+				bottom: 300
+			},
 			description: '',
 			link: '',
 			date: '',
 			role: [''],
 			colors: {
-				background: '',
+				background: 360 * 5 / 8,
 				text: ''
 			},
 			images: {
@@ -306,66 +148,32 @@ export const state = () => ({
 				'smoothscroll',
 				'pub-sub.js',
 				'stylus'
-			],
-			squares: [
-				{
-					position: {
-						top: 60,
-						left: 100
-					},
-					size: {
-						width: 200,
-						height: 300
-					},
-					images: [
-						{
-							type: 'img',
-							src: 'images/me-1.jpg',
-							size: {
-								width: 225,
-								height: 300
-							}
-						},
-					],
-					speed: 4,
-					direction: 1,
-					classNames: ['']
-				},
-				{
-					position: {
-						top: 80,
-						left: 10
-					},
-					size: {
-						width: 200,
-						height: 300
-					},
-					images: [
-						{
-							type: 'img',
-							src: 'images/me-1.jpg',
-							size: {
-								width: 225,
-								height: 300
-							}
-						},
-					],
-					speed: 2,
-					direction: 1,
-					classNames: ['']
-				},
 			]
 		},
 		{
 			type: 'project',
 			status: 'released',
 			title: 'CAE',
+			cover: {
+				src: 'images/b4.jpg',
+			},
+			scroll: {
+				speed: 3
+			},
+			number: {
+				top: 10,
+				left: -5
+			},
+			margin: {
+				top: 0,
+				bottom: 300
+			},
 			description: '',
 			link: '',
 			date: '',
 			role: [''],
 			colors: {
-				background: '',
+				background: 360 * 6 / 8,
 				text: ''
 			},
 			images: {
@@ -381,66 +189,32 @@ export const state = () => ({
 				'swiper',
 				'scrollreveal',
 				'vanillajs'
-			],
-			squares: [
-				{
-					position: {
-						top: 70,
-						left: 85
-					},
-					size: {
-						width: 200,
-						height: 300
-					},
-					images: [
-						{
-							type: 'img',
-							src: 'images/me-1.jpg',
-							size: {
-								width: 225,
-								height: 300
-							}
-						},
-					],
-					speed: -2,
-					direction: 1,
-					classNames: ['']
-				},
-				{
-					position: {
-						top: 85,
-						left: 20
-					},
-					size: {
-						width: 200,
-						height: 300
-					},
-					images: [
-						{
-							type: 'img',
-							src: 'images/me-1.jpg',
-							size: {
-								width: 225,
-								height: 300
-							}
-						},
-					],
-					speed: 1,
-					direction: 1,
-					classNames: ['']
-				}
 			]
 		},
 		{
 			type: 'project',
 			status: 'released',
 			title: 'Goblin Hunter',
+			cover: {
+				src: 'images/b5.jpg',
+			},
+			scroll: {
+				speed: 3
+			},
+			number: {
+				top: 0,
+				left: 100
+			},
+			margin: {
+				top: 0,
+				bottom: 300
+			},
 			description: '',
 			link: '',
 			date: '',
 			role: [''],
 			colors: {
-				background: '',
+				background: 360 * 7 / 8,
 				text: ''
 			},
 			images: {
@@ -458,89 +232,32 @@ export const state = () => ({
 				'vanillajs',
 				'compass',
 				'html5'
-			],
-			squares: [
-				{
-					position: {
-						top: 60,
-						left: 60
-					},
-					size: {
-						width: 300,
-						height: 200
-					},
-					images: [
-						{
-							type: 'img',
-							src: 'images/me-1.jpg',
-							size: {
-								width: 225,
-								height: 300
-							}
-						},
-					],
-					speed: 4,
-					direction: 1,
-					classNames: ['']
-				},
-				{
-					position: {
-						top: 85,
-						left: 90
-					},
-					size: {
-						width: 200,
-						height: 300
-					},
-					images: [
-						{
-							type: 'img',
-							src: 'images/me-1.jpg',
-							size: {
-								width: 225,
-								height: 300
-							}
-						},
-					],
-					speed: 2,
-					direction: 1,
-					classNames: ['']
-				},
-				{
-					position: {
-						top: 85,
-						left: 0
-					},
-					size: {
-						width: 250,
-						height: 300
-					},
-					images: [
-						{
-							type: 'img',
-							src: 'images/me-1.jpg',
-							size: {
-								width: 225,
-								height: 300
-							}
-						},
-					],
-					speed: -3,
-					direction: 1,
-					classNames: ['']
-				},
 			]
 		},
 		{
 			type: 'project',
 			status: 'released',
 			title: 'React MovieDB',
+			cover: {
+				src: 'images/b6.jpg'
+			},
+			scroll: {
+				speed: 3
+			},
+			number: {
+				top: 0,
+				left: 0
+			},
+			margin: {
+				top: 0,
+				bottom: 300
+			},
 			description: '',
 			link: '',
 			date: '',
 			role: [''],
 			colors: {
-				background: '',
+				background: 360 * 8 / 8,
 				text: ''
 			},
 			images: {
@@ -555,60 +272,13 @@ export const state = () => ({
 				'api',
 				'css grid',
 				'autosuggest'
-			],
-			squares: [
-				{
-					position: {
-						top: 70,
-						left: 100
-					},
-					size: {
-						width: 250,
-						height: 300
-					},
-					images: [
-						{
-							type: 'img',
-							src: 'images/me-1.jpg',
-							size: {
-								width: 225,
-								height: 300
-							}
-						},
-					],
-					speed: 3,
-					direction: 1,
-					classNames: ['']
-				},
-				{
-					position: {
-						top: 60,
-						left: 40
-					},
-					size: {
-						width: 300,
-						height: 200
-					},
-					images: [
-						{
-							type: 'img',
-							src: 'images/me-1.jpg',
-							size: {
-								width: 225,
-								height: 300
-							}
-						},
-					],
-					speed: -2,
-					direction: 1,
-					classNames: ['']
-				}
 			]
 		},
 		// {
 		// 	type: 'project',
 		// 	status: 'soon',
 		// 	title: 'HETIC Interne',
+		//  cover: 'images/b7.jpg',
 		// 	description: '',
 		// 	link: '',
 		// 	date: '',
@@ -630,31 +300,6 @@ export const state = () => ({
 		// 		'nuxt.js',
 		// 		'blog'
 		// 	],
-		// 	squares: [
-		// 		{
-		// 			position: {
-		// 				top: 55,
-		// 				left: 50
-		// 			},
-		// 			size: {
-		// 				width: 250,
-		// 				height: 300
-		// 			},
-		// 			images: [
-		// 				{
-		// 					type: 'img',
-		// 					src: 'images/me-1.jpg',
-		// 					size: {
-		// 						width: 225,
-		// 						height: 300
-		// 					}
-		// 				},
-		// 			],
-		// 			speed: -2,
-		// 			direction: 1,
-		// 			classNames: ['']
-		// 		},
-		// 	]
 		// }
 	],
 	socials: [
