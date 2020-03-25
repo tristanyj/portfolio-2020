@@ -25,6 +25,7 @@
 		"vue-masonry": "^0.11.8"
 	},
 	"devDependencies": {
+		"@nuxtjs/style-resources": "^1.0.0",
 		"nodemon": "^1.11.0"
 	}
 }
