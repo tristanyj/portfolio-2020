@@ -1,5 +1,5 @@
 <template>
-	<div class="outro-container section-container" :data-color-background="data.colors.background">
+	<div class="outro-container section-container">
 		<contact/>
 		<bye/>
 	</div>

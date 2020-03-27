@@ -25,12 +25,13 @@ export const state = () => ({
 				speed: 0
 			},
 			number: {
+				speed: 1.25,
 				top: 0,
 				left: 100
 			},
 			margin: {
 				top: 200,
-				bottom: 300
+				bottom: 400
 			},
 			description: '',
 			link: '',
@@ -69,12 +70,13 @@ export const state = () => ({
 				speed: 1
 			},
 			number: {
+				speed: -1.25,
 				top: -1,
 				left: 101
 			},
 			margin: {
 				top: 0,
-				bottom: 300
+				bottom: 350
 			},
 			description: '',
 			link: '',
@@ -114,12 +116,13 @@ export const state = () => ({
 				speed: 2
 			},
 			number: {
+				speed: 1.25,
 				top: 0,
 				left: 0
 			},
 			margin: {
 				top: 0,
-				bottom: 300
+				bottom: 350
 			},
 			description: '',
 			link: '',
@@ -161,12 +164,13 @@ export const state = () => ({
 				speed: 3
 			},
 			number: {
+				speed: -1.25,
 				top: 10,
 				left: -5
 			},
 			margin: {
 				top: 0,
-				bottom: 300
+				bottom: 350
 			},
 			description: '',
 			link: '',
@@ -202,12 +206,13 @@ export const state = () => ({
 				speed: 3
 			},
 			number: {
+				speed: 1.25,
 				top: 0,
 				left: 100
 			},
 			margin: {
 				top: 0,
-				bottom: 300
+				bottom: 350
 			},
 			description: '',
 			link: '',
@@ -245,12 +250,13 @@ export const state = () => ({
 				speed: 3
 			},
 			number: {
+				speed: -1.25,
 				top: 0,
 				left: 0
 			},
 			margin: {
 				top: 0,
-				bottom: 300
+				bottom: 350
 			},
 			description: '',
 			link: '',

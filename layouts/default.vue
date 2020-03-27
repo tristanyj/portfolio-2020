@@ -29,7 +29,11 @@
 		-webkit-font-smoothing antialiased
 		box-sizing border-box
 	}
+
 	.__layout-wrapper {
+		background hsl(0, 40%, 95%)
+		transition 0.3s background ease
+
 		.overlay {
 			position fixed
 			top 0

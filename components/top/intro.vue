@@ -1,5 +1,5 @@
 <template>
-	<div class="intro-container section-container" :data-color-background="data.colors.background">
+	<div class="intro-container section-container">
 		<topbar/>
 		<description/>
 		<thumbs-down/>
@@ -13,8 +13,7 @@
 		flex-direction column
 		justify-content space-between
 		height calc(100vh - 100px)
-		// padding-top 25px
-		padding-bottom 120px
+		padding-bottom 100px
 	}
 </style>
 

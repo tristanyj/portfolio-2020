@@ -12,9 +12,6 @@
 	.container-index {
 		max-width 1920px
 		margin 0 auto
-		background hsl(45, 40%, 95%)
-		// background hsl(0, 10%, 80%)
-		transition 0.3s background ease
 
 		.content {
 			position relative
@@ -81,8 +78,6 @@
 							this.sectionsDOM.forEach(s => s.classList.remove('active'))
 							section.classList.add('active')
 
-							this.scroll.el.style.backgroundColor = `hsl(${ section.dataset.colorBackground }, 40%, 95%)`
-
 							this.$nuxt.$emit('CHANGE_PROJECT')
 						}
 
@@ -93,26 +88,39 @@
 		},
 		mounted() {
 			this.$nuxt.$nextTick(() => {
+				this.backgroundEl = document.querySelector('.__layout-wrapper')
 				this.sectionsDOM = Array.from(document.querySelectorAll('.section-container'))
 
 				this.scroll = new LocomotiveScroll({
 					el: document.querySelector('[data-scroll-container]'),
-					smooth: true,
-					getSpeed: true
+					smooth: true
 				})
 
-				this.filter = new Filter()
+				// this.filter = new Filter()
 
 				this.scroll.on('scroll', (e) => {
 					const progress = 360 * e.scroll.y / e.limit
-					// this.scroll.el.style.backgroundColor = `hsl(${progress}, 38%, 95%)`
-
-					this.checkCurrentSection(e)
+					this.backgroundEl.style.backgroundColor = `hsl(${progress}, 40%, 95%)`
 
 					this.filter.scroll = {
 						x: 0,
 						y: e.scroll.y
 					}
+
+
+					// this.checkCurrentSection(e)
+
+					// const speed = e.speed
+					// console.log(speed)
+
+					// const maxTranslate = 30
+					// const current = speed / 200 * 100 * 2
+
+					// console.log(speed / 200 * 100)
+
+					// this.projectTitles.forEach((pr) => {
+					// 	pr.style.transform = `translateY(${ current }px)`
+					// })
 				})
 			})
 		}

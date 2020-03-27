@@ -1,28 +1,28 @@
 <template>
 	<div class="description-container" data-scroll data-scroll-speed="1">
-		<svg class="distort" width="350" height="450" viewBox="0 0 350 450">
+		<!-- <svg class="distort" width="350" height="450" viewBox="0 0 350 450">
 			<filter id="distortionFilter">
 				<feTurbulence type="fractalNoise" baseFrequency="0.05" numOctaves="5" seed="2" stitchTiles="noStitch" x="0%" y="0%" width="100%" height="100%" result="noise"/>
 				<feDisplacementMap in="SourceGraphic" in2="noise" scale="0" xChannelSelector="R" yChannelSelector="B" x="0%" y="0%" width="100%" height="100%" filterUnits="userSpaceOnUse"/>
 			</filter>
 			<g filter="url(#distortionFilter)">
 				<image class="distort__img" x="50" y="50" xlink:href="images/me-1.jpg" height="350" width="250"/>
-				<image class="distort__img" x="50" y="50" xlink:href="images/b2.jpg" height="350" width="250"/>
-				<image class="distort__img" x="50" y="50" xlink:href="images/b3.jpg" height="350" width="250"/>
-				<image class="distort__img" x="50" y="50" xlink:href="images/b4.jpg" height="350" width="250"/>
+				<image class="distort__img" x="50" y="50" xlink:href="images/filter-developer-1.gif" height="350" width="250"/>
+				<image class="distort__img" x="50" y="50" xlink:href="images/filter-generative.gif" height="350" width="250"/>
+				<image class="distort__img" x="50" y="50" xlink:href="images/filter-projects.gif" height="350" width="250"/>
 			</g>
-		</svg>
+		</svg> -->
 		<div class="description">
-			<div class="line">
-				Hi, I’m <strong class="quote__link">Tristan</strong>, a web developer based in Paris.
+			<div class="line" data-scroll data-scroll-speed="1.25">
+				Hi, I’m <strong class="quote__link">Tristan</strong>, a web <strong class="quote__link">developer</strong> based in Paris.
 			</div>
-			<div class="line">
-				I work mostly with <strong class="quote__link">Vuejs & Nuxtjs</strong>, Reactjs or Wordpress.
+			<div class="line" data-scroll data-scroll-speed="1.75">
+				I work mostly with Vuejs & <strong>Nuxtjs</strong>, and Headless CMSs like <strong>Prismic</strong>.
 			</div>
-			<div class="line">
-				I’m interested in <strong class="quote__link">creative coding</strong> and particularly generative art.
+			<div class="line" data-scroll data-scroll-speed="2.25">
+				I’m interested in <strong>creative coding</strong> and particularly <strong class="quote__link">generative art.</strong>
 			</div>
-			<div class="line">
+			<div class="line" data-scroll data-scroll-speed="2.75">
 				Here are some of my <strong class="quote__link">projects</strong>.
 			</div>
 		</div>
@@ -52,16 +52,19 @@
 				position relative
 				font-family 'Circular Bold'
 
-				&:before {
-					content ''
-					position absolute
-					top 101%
-					left 50%
-					width 98%
-					transform translateX(-50%)
-					height 3px
-					background black
+				&.quote__link {
+					&:before {
+						content ''
+						position absolute
+						top 101%
+						left 50%
+						width 98%
+						transform translateX(-50%)
+						height 3px
+						background black
+					}
 				}
+
 			}
 		}
 	}

@@ -1,11 +1,15 @@
 <template>
-	<div class="project-container section-container" data-scroll :data-scroll-speed="0" data-scroll-call="inview" :data-color-background="data.colors.background">
+	<div class="project-container section-container" data-scroll :data-scroll-speed="0" data-scroll-call="inview">
 		<div :class="['project-content', data.status === 'released' ? '' : 'soon' ]">
 			<a v-if="data.status === 'released'" :href="data.link" class="project-wrapper">
-				<div class="number" :style="{ top: data.number.top !== undefined ? `${ data.number.top }%` : '', bottom: data.number.bottom !== undefined ? `${ data.number.bottom }%` : '', left: data.number.left !== undefined ? `${ data.number.left }%` : '', right: data.number.right !== undefined ? `${ data.number.right }%` : '' }">{{ index }}</div>
-				<img :src="data.cover.src" alt="">
-				<marquee-text class="marquee-container-component" :data="data.tech"/>
-				<span class="title">{{ data.title }}</span>
+				<div class="number" :style="{ top: data.number.top !== undefined ? `${ data.number.top }%` : '', bottom: data.number.bottom !== undefined ? `${ data.number.bottom }%` : '', left: data.number.left !== undefined ? `${ data.number.left }%` : '', right: data.number.right !== undefined ? `${ data.number.right }%` : '' }">
+					<span>{{ index }}</span>
+				</div>
+				<div class="content" data-scroll :data-scroll-speed="data.number.speed">
+					<img :src="data.cover.src" alt="">
+					<marquee-text class="marquee-container-component" :data="data.tech"/>
+					<span class="title">{{ data.title }}</span>
+				</div>
 			</a>
 
 			<!-- <div v-else-if="data.status === 'soon'" class="title-container" data-scroll data-scroll-call="inview">
@@ -43,9 +47,13 @@
 				.number {
 					position absolute
 					transform translate(-50%, -50%)
-					font-size 400px
+					font-size 450px
 					opacity 0.25
 					font-family 'Bagnard'
+
+					span {
+						display	inline-block
+					}
 				}
 
 				img {
@@ -54,14 +62,15 @@
 				}
 
 				.title {
+					display inline-block
 					text-transform uppercase
 					position relative
 					right 2px
-					display inline-block
 					width 100%
 					font-family 'Young'
 					font-size 58px
 					line-height 100%
+					margin-top 10px
 				}
 
 				// .coming-soon {
