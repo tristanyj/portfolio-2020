@@ -11,16 +11,19 @@
 		"generate": "nuxt generate"
 	},
 	"dependencies": {
+		"charming": "^3.0.2",
 		"cross-env": "^5.2.0",
 		"glslify": "^7.0.0",
 		"gsap": "^2.0.2",
 		"imagesloaded": "^4.1.4",
 		"in-viewport": "^3.6.0",
+		"mobile-detect": "^1.4.4",
 		"nuxt": "^2.11.0",
 		"smoothscroll-polyfill": "^0.4.4",
 		"stylus": "^0.54.5",
 		"stylus-loader": "^3.0.2",
 		"three": "^0.114.0",
+		"three-gif-loader": "^1.1.0",
 		"vue-marquee-text-component": "^1.1.1",
 		"vue-masonry": "^0.11.8"
 	},

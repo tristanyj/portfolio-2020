@@ -11,6 +11,10 @@
 	.bye-container {
 		margin-top 180px
 
+		@media screen and (max-width: 1000px) {
+			margin-top 120px
+		}
+
 		.bye {
 			display flex
 			justify-content center

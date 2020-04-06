@@ -11,8 +11,11 @@
 		display flex
 		flex-direction column
 		justify-content center
-		height calc(100vh - 100px)
 		padding-top 200px
+
+		@media screen and (max-width: 1000px) {
+			padding-top 140px
+		}
 	}
 </style>
 

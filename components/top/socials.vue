@@ -20,6 +20,14 @@
 			opacity 0.7
 			transition 0.1s all ease
 
+			@media screen and (max-width: 500px) {
+				margin 0 15px
+
+				// &:first-child {
+				// 	margin-left 0
+				// }
+			}
+
 			&:hover {
 				opacity 0.75
 			}

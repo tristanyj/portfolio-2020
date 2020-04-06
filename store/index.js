@@ -25,8 +25,8 @@ export const state = () => ({
 				speed: 0
 			},
 			number: {
-				speed: 1.25,
-				top: 0,
+				speed: 2,
+				top: 10,
 				left: 100
 			},
 			margin: {
@@ -71,8 +71,8 @@ export const state = () => ({
 			},
 			number: {
 				speed: -1.25,
-				top: -1,
-				left: 101
+				top: 0,
+				left: 100
 			},
 			margin: {
 				top: 0,

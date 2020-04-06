@@ -12,6 +12,10 @@
 
 <style lang="stylus" scoped>
 	.contact-container {
+		@media screen and (max-width: 600px) {
+			text-align left
+		}
+
 		.line {
 			font-family 'Circular Book'
 			font-size 32px
@@ -24,6 +28,40 @@
 				position relative
 				font-family 'Young'
 				font-size 48px
+			}
+
+			@media screen and (max-width: 1200px) {
+				font-size 24px
+				line-height 170%
+				margin-bottom 30px
+
+				&.line-1 {
+					margin-bottom 50px
+				}
+
+				.big {
+					font-size 40px
+				}
+			}
+
+			@media screen and (max-width: 1000px) {
+				bottom 0 !important
+
+				&.line-1 {
+					margin-bottom 30px
+				}
+
+				.big {
+					font-size 32px
+				}
+			}
+
+			@media screen and (max-width: 600px) {
+				font-size 18px
+
+				.big {
+					font-size 28px
+				}
 			}
 		}
 	}

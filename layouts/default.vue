@@ -1,19 +1,16 @@
 <template>
 	<div class="__layout-wrapper main">
-		<!-- <loading/>
-		<div class="overlay"></div> -->
+		<loading/>
 		<nuxt/>
 	</div>
 </template>
 
 <script>
-	// import canvasTemp from '~/components/canvas-temp'
-	// import loading from '~/components/loading'
+	import loading from '~/components/loading'
 
 	export default {
 		components: {
-			// loading,
-			// canvasTemp
+			loading
 		}
 	}
 </script>
@@ -33,15 +30,6 @@
 	.__layout-wrapper {
 		background hsl(0, 40%, 95%)
 		transition 0.3s background ease
-
-		.overlay {
-			position fixed
-			top 0
-			left 0
-			width 100%
-			height 100%
-			background rgba(0, 0, 0, 0.7)
-		}
 	}
 
 	*,

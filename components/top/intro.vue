@@ -2,18 +2,17 @@
 	<div class="intro-container section-container">
 		<topbar/>
 		<description/>
-		<thumbs-down/>
+		<!-- <thumbs-down/> -->
 	</div>
 </template>
 
 <style lang="stylus" scoped>
 	.intro-container {
 		position relative
-		display flex
-		flex-direction column
-		justify-content space-between
-		height calc(100vh - 100px)
-		padding-bottom 100px
+
+		@media screen and (max-width: 600px) {
+			text-align left
+		}
 	}
 </style>
 

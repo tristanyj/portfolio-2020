@@ -20,17 +20,19 @@
 			z-index 1
 
 			@media screen and (max-width: 600px) {
-				padding	40px 20px
+				padding	70px 20px
 			}
 		}
 	}
 </style>
 
 <script>
+	import MobileDetect from 'mobile-detect'
 	import { mapGetters } from 'vuex'
 	import { TimelineLite } from 'gsap'
 
 	import Filter from '~/assets/scripts/Filter'
+	import HoverFx from '~/assets/scripts/HoverFX'
 
 	import intro from '~/components/top/intro'
 	import projects from '~/components/content/projects'
@@ -87,40 +89,51 @@
 			}
 		},
 		mounted() {
+			this.fxInstances = []
+
+			this.md = new MobileDetect(window.navigator.userAgent)
+
 			this.$nuxt.$nextTick(() => {
 				this.backgroundEl = document.querySelector('.__layout-wrapper')
 				this.sectionsDOM = Array.from(document.querySelectorAll('.section-container'))
 
-				this.scroll = new LocomotiveScroll({
-					el: document.querySelector('[data-scroll-container]'),
-					smooth: true
-				})
+				if(!this.md.mobile() && window.innerWidth >= 1000) {
+					this.scroll = new LocomotiveScroll({
+						el: document.querySelector('[data-scroll-container]'),
+						smooth: true
+					})
 
-				// this.filter = new Filter()
+					this.scroll.on('scroll', (e) => {
+						const progress = 360 * e.scroll.y / e.limit
+						this.backgroundEl.style.backgroundColor = `hsl(${progress}, 40%, 95%)`
 
-				this.scroll.on('scroll', (e) => {
-					const progress = 360 * e.scroll.y / e.limit
-					this.backgroundEl.style.backgroundColor = `hsl(${progress}, 40%, 95%)`
+						this.fxInstances.forEach(ins => {
+							ins.scroll = {
+								x: 0,
+								y: e.scroll.y
+							}
+						})
+					})
 
-					this.filter.scroll = {
-						x: 0,
-						y: e.scroll.y
-					}
+					Array.from(document.querySelectorAll('.quote__link')).forEach(el =>  {
+						this.fxInstances.push(new HoverFx(el))
+					})
+				} else {
+					Array.from(document.querySelectorAll('.hover-reveal')).forEach(el => {
+						el.style.display = 'none'
+					})
+					document.body.style.overflowY = 'scroll'
+				}
 
 
-					// this.checkCurrentSection(e)
+				this.$nuxt.$on('FINISHED_LOADING', () => {
+					const tl = new TimelineLite()
 
-					// const speed = e.speed
-					// console.log(speed)
-
-					// const maxTranslate = 30
-					// const current = speed / 200 * 100 * 2
-
-					// console.log(speed / 200 * 100)
-
-					// this.projectTitles.forEach((pr) => {
-					// 	pr.style.transform = `translateY(${ current }px)`
-					// })
+					tl.add('start')
+					tl.to('.topbar-container .animation-wrapper', 1, { opacity: 1 }, 'start')
+					tl.staggerFromTo('.description-container .animation-wrapper', 1, { opacity: 0, y: 20 },  { opacity: 1, y: 0, ease: Power3.easeOut }, 0.1, 'start+=0.2')
+					tl.to('.thumbs-container .animation-wrapper', 1, { opacity: 1 }, 'start+=0.3')
+					tl.staggerFromTo('.project-container .animation-wrapper', 1, { opacity: 0, y: 20}, { opacity: 1, y: 20 }, 0.1, 'start+=0.3')
 				})
 			})
 		}

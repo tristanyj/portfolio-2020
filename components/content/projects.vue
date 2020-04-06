@@ -11,6 +11,7 @@
 		width 100%
 		max-width 1200px
 		margin 0 auto
+		padding 0 100px
 
 		.project-wrapper {
 			width 100%
@@ -28,6 +29,36 @@
 
 			&:first-child {
 				justify-content center
+			}
+		}
+
+		@media screen and (max-width: 1000px) {
+			padding 0
+
+			.project-wrapper {
+				justify-content center
+				margin-top 75px !important
+				margin-bottom 150px !important
+
+				&:nth-child(even) {
+					justify-content center
+				}
+
+				&:nth-child(odd) {
+					justify-content center
+				}
+
+				&:first-child {
+					justify-content center
+				}
+			}
+		}
+
+		@media screen and (max-width: 600px) {
+			.project-wrapper {
+				justify-content center
+				margin-top 50px !important
+				margin-bottom 40px !important
 			}
 		}
 	}
