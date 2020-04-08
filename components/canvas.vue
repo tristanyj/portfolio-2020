@@ -16,12 +16,13 @@
 </style>
 
 <script>
+	import MobileDetect from 'mobile-detect'
 	import * as THREE from 'three'
 	import glslify from 'glslify'
 
 	export default {
 		name: 'canvas-container',
-		props: ['hover'],
+		props: ['index', 'hover', 'images'],
 		computed: {
 			to() {
 				return this.hover ? 1 : 0
@@ -36,7 +37,7 @@
 		methods: {
 			resize() {
 				let w = this.width
-				let h = this.height + 100
+				let h = this.height + 250
 
 				this.renderer.setSize(w, h)
 				this.camera.aspect = w / h
@@ -53,7 +54,7 @@
 			},
 			initScene() {
 				const w = this.width
-				const h = this.height + 100
+				const h = this.height + 120
 
 				this.scene = new THREE.Scene()
 				this.renderer = new THREE.WebGLRenderer()
@@ -96,7 +97,6 @@
 							value: this.gallery[1]
 						},
 					},
-					// wireframe: true,
 					vertexShader: this.shader.vertex,
 					fragmentShader: this.shader.fragment
 				})
@@ -117,15 +117,8 @@
 				this.renderer.render(this.scene, this.camera)
 			},
 			raf() {
-				this.position += (this.to - this.position) / 15
-
-				this.material.uniforms.progress.value = this.position
-
-				let curslide = (Math.floor(this.position) - 1 + this.gallery.length) % this.gallery.length
-				let nextslide = (((Math.floor(this.position) + 1) % this.gallery.length - 1) + this.gallery.length) % this.gallery.length
-
-				this.material.uniforms.texture1.value = this.gallery[curslide]
-				this.material.uniforms.texture2.value = this.gallery[nextslide]
+				this.position += (this.to - this.position) / 14
+				this.material.uniforms.progress.value = Math.min(this.position.toFixed(3), 0.998)
 
 				window.requestAnimationFrame(this.raf)
 			}
@@ -136,7 +129,6 @@
 					uniform float time;
 					varying vec2 vUv;
 					varying vec2 vUv1;
-					varying vec4 vPosition;
 					uniform sampler2D texture1;
 					uniform sampler2D texture2;
 					uniform vec2 pixels;
@@ -162,7 +154,6 @@
 					uniform vec2 accel;
 					varying vec2 vUv;
 					varying vec2 vUv1;
-					varying vec4 vPosition;
 
 					vec2 mirrored(vec2 v) {
 						vec2 m = mod(v, 2.0);
@@ -199,26 +190,36 @@
 				`)
 			}
 
-			this.gallery = [
-				THREE.ImageUtils.loadTexture('images/b2.jpg'),
-				THREE.ImageUtils.loadTexture('images/b6.jpg')
-			]
+			this.md = new MobileDetect(window.navigator.userAgent)
 
-			this.camera, this.pos, this.controls, this.scene, this.renderer, this.geometry, this.geometry1, this.material, this.plane, this.tex1, this.tex2
-			this.target = 0
-			this.time = 0
-			this.position = 0
+			this.$nuxt.$nextTick(() => {
+				if(!this.md.mobile() && window.innerWidth >= 1000) {
+					const texture1 = new THREE.TextureLoader().load(this.images[0].src)
+					const texture2 = new THREE.TextureLoader().load(this.images[1].src)
 
-			this.destination = {
-				x: 0,
-				y: 0
-			}
-			this.textures = []
+					this.gallery = [
+						texture1,
+						texture2
+					]
 
-			this.initScene()
-			this.animate()
+					this.camera, this.pos, this.controls, this.scene, this.renderer, this.geometry, this.geometry1, this.material, this.plane, this.tex1, this.tex2
+					this.target = 0
+					this.time = 0
+					this.position = 0
 
-			this.raf()
+					this.destination = {
+						x: 0,
+						y: 0
+					}
+					this.textures = []
+
+					this.initScene()
+					this.animate()
+
+					this.raf()
+				}
+			})
+
 		}
 	}
 </script>

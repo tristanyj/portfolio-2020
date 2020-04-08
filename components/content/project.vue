@@ -1,12 +1,9 @@
 <template>
 	<div class="project-container section-container">
 		<div :class="['project-content', 'animation-wrapper', data.status === 'released' ? '' : 'soon' ]">
-			<a ref="projectWrapper" v-if="data.status === 'released'" :href="data.link" @mouseenter="onMouseEnter" @mouseleave="onMouseLeave" class="project-wrapper">
+			<a ref="projectWrapper" target="_blank" v-if="data.status === 'released'" :href="data.link" @mouseenter="onMouseEnter" @mouseleave="onMouseLeave" class="project-wrapper">
 				<div ref="number"
-					:class="[
-						'number',
-						index % 2 === 0 ? 'on-the-left' : 'on-the-right'
-					]"
+					:class="['number', index % 2 === 0 ? 'on-the-left' : 'on-the-right']"
 					:style="{
 						top: data.number.top !== undefined ? `${ data.number.top }%` : '',
 						bottom: data.number.bottom !== undefined ? `${ data.number.bottom }%` : '',
@@ -17,18 +14,20 @@
 				<div class="content" data-scroll data-scroll-speed="2">
 					<div ref="imageContainer" class="image-container">
 						<div class="details-container" :class="[index % 2 === 0 ? 'on-the-right': 'on-the-left']">
-							<div class="year-container">
-								<div class="year">{{ data.date }}</div>
-							</div>
-							<div class="type-container">
-								<div class="type">{{ data.label }}</div>
-							</div>
-							<div class="description-container">
-								<div class="description">{{ data.description }}</div>
+							<div class="details-wrapper" data-scroll data-scroll-speed="3">
+								<div class="year-container">
+									<div class="year">{{ data.date }}</div>
+								</div>
+								<div class="type-container">
+									<div class="type">{{ data.label }}</div>
+								</div>
+								<div class="description-container">
+									<div class="description">{{ data.description }}</div>
+								</div>
 							</div>
 						</div>
 						<div ref="canvasContainer" class="canvas-wrapper">
-							<canvas-el :hover="hover"/>
+							<canvas-el :index="index" :hover="hover" :images="data.cover"/>
 						</div>
 						<img :src="data.cover[0].src" alt="">
 					</div>
@@ -113,17 +112,23 @@
 					height 100%
 
 					.details-container {
-						display flex
-						flex-direction column
 						position absolute
-						top 0
+						top 50px
 						width 320px
 						pointer-events none
 
+						.details-wrapper {
+							display flex
+							flex-direction column
+						}
+
 						&.on-the-left {
 							right calc(100% + 150px)
-							justify-content flex-end
-							text-align right
+
+							.details-wrapper {
+								justify-content flex-end
+								text-align right
+							}
 
 							@media screen and (max-width: 1400px) {
 								right calc(100% + 130px)
@@ -133,14 +138,20 @@
 								top calc(100% + 130px)
 								right initial
 								left 0
-								text-align left
+
+								.details-wrapper {
+									text-align left
+								}
 							}
 						}
 
 						&.on-the-right {
 							left calc(100% + 150px)
-							justify-content flex-start
-							text-align left
+
+							.details-wrapper {
+								justify-content flex-start
+								text-align left
+							}
 
 							@media screen and (max-width: 1400px) {
 								left calc(100% + 130px)
@@ -150,7 +161,10 @@
 								top calc(100% + 130px)
 								right initial
 								left 0
-								text-align left
+
+								.details-wrapper {
+									text-align left
+								}
 							}
 						}
 
@@ -222,7 +236,7 @@
 						font-size 58px
 						line-height 100%
 						margin-top 10px
-						transition all 0.3s cubic-bezier(.5, 0, 0, 1) 0.1s
+						transition all 0.3s cubic-bezier(.5, 0, 0, 1) 0.15s
 
 						@media screen and (max-width: 600px) {
 							font-size 36px
@@ -302,14 +316,10 @@
 			onMouseEnter() {
 				this.hover = true
 
-				const tl = new TimelineLite() 
-
 				this.$refs.projectWrapper.classList.add('active')
 			},
 			onMouseLeave() {
 				this.hover = false
-
-				const tl = new TimelineLite()
 
 				this.$refs.projectWrapper.classList.remove('active')
 			}

@@ -19,7 +19,7 @@
 						developer<div class="hover-reveal" style="width: 300px; height: 300px;">
 							<div class="hover-reveal__inner">
 								<div class="hover-reveal__img">
-									<div class="img" :style="{ backgroundImage: `url(images/filter-developer-2.gif)` }"></div>
+									<div class="img" :style="{ backgroundImage: `url(images/filter-developer.gif)` }"></div>
 								</div>
 							</div>
 						</div>

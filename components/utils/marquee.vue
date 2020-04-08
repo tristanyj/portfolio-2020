@@ -12,7 +12,7 @@
 	.marquee-container {
 		width 100%
 		overflow-x hidden
-		padding-top 5px
+		padding-top 10px
 
 		div {
 			font-size 14px

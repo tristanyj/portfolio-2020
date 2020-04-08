@@ -12,10 +12,10 @@ export const state = () => ({
 			title: 'Generative Gallery',
 			cover: [
 				{
-					src: 'images/b2.jpg'
+					src: 'images/project-1-1.jpg'
 				},
 				{
-					src: 'images/b6.jpg'
+					src: 'images/project-1-2.jpg'
 				},
 			],
 			number: {
@@ -48,10 +48,10 @@ export const state = () => ({
 			title: 'Generative Bicycle',
 			cover: [
 				{
-					src: 'images/b2.jpg'
+					src: 'images/project-2-1.jpg'
 				},
 				{
-					src: 'images/b6.jpg'
+					src: 'images/project-2-2.jpg'
 				},
 			],
 			number: {
@@ -85,10 +85,10 @@ export const state = () => ({
 			title: 'Sabrina Nedjah',
 			cover: [
 				{
-					src: 'images/b2.jpg'
+					src: 'images/project-3-1.jpg'
 				},
 				{
-					src: 'images/b6.jpg'
+					src: 'images/project-3-2.jpg'
 				},
 			],
 			number: {
@@ -124,10 +124,10 @@ export const state = () => ({
 			title: 'Hetic Campus',
 			cover: [
 				{
-					src: 'images/b2.jpg'
+					src: 'images/project-4-1.jpg'
 				},
 				{
-					src: 'images/b6.jpg'
+					src: 'images/project-4-2.jpg'
 				},
 			],
 			number: {
@@ -139,7 +139,7 @@ export const state = () => ({
 				bottom: 350
 			},
 			label: 'Freelance Project',
-			description: 'Development of an internal news website for my school',
+			description: 'Development of an internal news website for my school (not released yet)',
 			link: 'https://competent-villani-12ef0b.netlify.com/',
 			date: '2020',
 			role: ['Developer'],
@@ -157,10 +157,10 @@ export const state = () => ({
 			title: 'Goblin Hunter',
 			cover: [
 				{
-					src: 'images/b2.jpg'
+					src: 'images/project-5-1.jpg'
 				},
 				{
-					src: 'images/b6.jpg'
+					src: 'images/project-5-2.jpg'
 				},
 			],
 			number: {
@@ -192,10 +192,10 @@ export const state = () => ({
 			title: 'React MovieDB',
 			cover: [
 				{
-					src: 'images/b2.jpg'
+					src: 'images/project-6-1.jpg'
 				},
 				{
-					src: 'images/b6.jpg'
+					src: 'images/project-6-2.jpg'
 				},
 			],
 			number: {
