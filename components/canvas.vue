@@ -1,14 +1,17 @@
 <template>
-	<div class="canvas-container"></div>
+	<div ref="canvasContainer" class="canvas-container"></div>
 </template>
 
 <style lang="stylus" scoped>
 	.canvas-container {
-		position fixed
-		top 0
-		left 0
+		position absolute
+		top 50%
+		left 50%
 		width 100%
 		height 100%
+		transform scale(0.805, 0.7) translate(-50%, -50.05%)
+		transform-origin 0 0
+		transition transform 0.6s cubic-bezier(.5, 0, 0, 1)
 	}
 </style>
 
@@ -18,10 +21,22 @@
 
 	export default {
 		name: 'canvas-container',
+		props: ['hover'],
+		computed: {
+			to() {
+				return this.hover ? 1 : 0
+			},
+			width() {
+				return this.$refs.canvasContainer.getBoundingClientRect().width
+			},
+			height() {
+				return this.$refs.canvasContainer.getBoundingClientRect().height
+			}
+		},
 		methods: {
 			resize() {
-				let w = window.innerWidth
-				let h = window.innerHeight
+				let w = this.width
+				let h = this.height + 100
 
 				this.renderer.setSize(w, h)
 				this.camera.aspect = w / h
@@ -37,16 +52,19 @@
 				this.camera.updateProjectionMatrix()
 			},
 			initScene() {
+				const w = this.width
+				const h = this.height + 100
+
 				this.scene = new THREE.Scene()
 				this.renderer = new THREE.WebGLRenderer()
 
 				this.renderer.setPixelRatio(window.devicePixelRatio)
-				this.renderer.setSize(window.innerWidth, window.innerWidth)
+				this.renderer.setSize(w, h)
 
-				this.container = document.querySelector('.canvas-container')
+				this.container = this.$refs.canvasContainer
 				this.container.appendChild(this.renderer.domElement)
 
-				this.camera = new THREE.PerspectiveCamera(70, window.innerWidth / window.innerHeight, 0.001, 100)
+				this.camera = new THREE.PerspectiveCamera(70, w / h, 0.001, 100)
 				this.camera.position.set(0, 0, 1);
 
 				this.material = new THREE.ShaderMaterial({
@@ -58,7 +76,7 @@
 						},
 						pixels: {
 							type: 'v2',
-							value: new THREE.Vector2(window.innerWidth, window.innerHeight)
+							value: new THREE.Vector2(w, h)
 						},
 						accel: {
 							type: 'v2',
@@ -89,7 +107,7 @@
 				this.resize()
 			},
 			animate() {
-				this.time = this.time + 0.05
+				this.time = this.time + 0.1
 				this.material.uniforms.time.value = this.time
 
 				requestAnimationFrame(this.animate)
@@ -98,30 +116,13 @@
 			render() {
 				this.renderer.render(this.scene, this.camera)
 			},
-			nextProject() {
-				const rounded = Math.ceil(this.position)
-				this.target = rounded + 1
-				console.log(this.position, this.target)
-			},
 			raf() {
-				this.position += (this.target - this.position) / 30
-
-				// let i = Math.round(this.position)
-				// let dif = i - this.position
-
-				// this.position += dif * 0.035
-				// if (Math.abs(i - this.position) < 0.001) {
-				// 	this.position = i
-				// }
-
-				console.log(this.position, this.target)
+				this.position += (this.to - this.position) / 15
 
 				this.material.uniforms.progress.value = this.position
 
 				let curslide = (Math.floor(this.position) - 1 + this.gallery.length) % this.gallery.length
 				let nextslide = (((Math.floor(this.position) + 1) % this.gallery.length - 1) + this.gallery.length) % this.gallery.length
-
-				// console.log(curslide, nextslide)
 
 				this.material.uniforms.texture1.value = this.gallery[curslide]
 				this.material.uniforms.texture2.value = this.gallery[nextslide]
@@ -147,6 +148,7 @@
 						vUv1 = _uv;
 						vUv1 *= uvRate1.xy;
 						vUv1 += 0.5;
+
 						gl_Position = projectionMatrix * modelViewMatrix * vec4( position, 1.0 );
 					}
 				`),
@@ -193,25 +195,13 @@
 						vec4 rgba = mix(rgba1, rgba2, delayValue);
 
 						gl_FragColor = rgba;
-
-						// gl_FragColor = vec4(tri(progress));
-						// gl_FragColor = vec4(delayValue);
-						// gl_FragColor = vec4(delayValue);
-						// gl_FragColor = vec4(uv,1.,1.);
 					}
 				`)
 			}
 
 			this.gallery = [
-				THREE.ImageUtils.loadTexture('images/b1.jpg'),
 				THREE.ImageUtils.loadTexture('images/b2.jpg'),
-				THREE.ImageUtils.loadTexture('images/b3.jpg'),
-				THREE.ImageUtils.loadTexture('images/b4.jpg'),
-				THREE.ImageUtils.loadTexture('images/b5.jpg'),
-				THREE.ImageUtils.loadTexture('images/b6.jpg'),
-				THREE.ImageUtils.loadTexture('images/b7.jpg'),
-				THREE.ImageUtils.loadTexture('images/b8.jpg'),
-				THREE.ImageUtils.loadTexture('images/gits-01.jpg'),
+				THREE.ImageUtils.loadTexture('images/b6.jpg')
 			]
 
 			this.camera, this.pos, this.controls, this.scene, this.renderer, this.geometry, this.geometry1, this.material, this.plane, this.tex1, this.tex2
@@ -229,14 +219,6 @@
 			this.animate()
 
 			this.raf()
-
-			this.$nuxt.$on('CHANGE_PROJECT', () => {
-				this.nextProject()
-			})
-
-			// window.addEventListener('click', () => {
-			// 	this.nextProject()
-			// })
 		}
 	}
 </script>

@@ -13,6 +13,10 @@
 		margin 0 auto
 		padding 0 100px
 
+		@media screen and (max-width: 1600px) {
+			padding 0 60px
+		}
+
 		.project-wrapper {
 			width 100%
 			display	flex
@@ -26,20 +30,10 @@
 			&:nth-child(odd) {
 				justify-content flex-end
 			}
-
-			&:first-child {
-				justify-content center
-			}
 		}
 
-		@media screen and (max-width: 1000px) {
-			padding 0
-
+		@media screen and (max-width: 1300px) {
 			.project-wrapper {
-				justify-content center
-				margin-top 75px !important
-				margin-bottom 150px !important
-
 				&:nth-child(even) {
 					justify-content center
 				}
@@ -51,6 +45,16 @@
 				&:first-child {
 					justify-content center
 				}
+			}
+		}
+
+		@media screen and (max-width: 1000px) {
+			padding 0
+
+			.project-wrapper {
+				justify-content center
+				margin-top 75px !important
+				margin-bottom 150px !important
 			}
 		}
 

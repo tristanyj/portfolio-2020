@@ -2,30 +2,23 @@ export const state = () => ({
 	sections: [
 		{
 			type: 'intro',
-			colors: {
-				background: 360 * 1 / 8,
-				text: ''
-			}
 		},
 		{
 			type: 'outro',
-			colors: {
-				background: 360 * 2 / 8,
-				text: ''
-			}
 		},
 		{
 			type: 'project',
 			status: 'released',
 			title: 'Generative Gallery',
-			cover: {
-				src: 'images/b1.jpg',
-			},
-			scroll: {
-				speed: 0
-			},
+			cover: [
+				{
+					src: 'images/b2.jpg'
+				},
+				{
+					src: 'images/b6.jpg'
+				},
+			],
 			number: {
-				speed: 2,
 				top: 10,
 				left: 100
 			},
@@ -33,21 +26,11 @@ export const state = () => ({
 				top: 200,
 				bottom: 400
 			},
-			description: '',
-			link: '',
-			date: '',
-			role: [''],
-			colors: {
-				background: 360 * 3 / 8,
-				text: ''
-			},
-			images: {
-				cover: '',
-				all: [
-					'',
-					''
-				]
-			},
+			label: 'Personal Project',
+			description: 'Gallery of the things I\'ve done while learning about generative art',
+			link: 'https://lab.tristan-lanoye.com/generative-gallery/',
+			date: '2020',
+			role: ['Developer', 'Designer'],
 			tech: [
 				'processing',
 				'p5.js',
@@ -63,14 +46,15 @@ export const state = () => ({
 			type: 'project',
 			status: 'released',
 			title: 'Generative Bicycle',
-			cover: {
-				src: 'images/b2.jpg',
-			},
-			scroll: {
-				speed: 1
-			},
+			cover: [
+				{
+					src: 'images/b2.jpg'
+				},
+				{
+					src: 'images/b6.jpg'
+				},
+			],
 			number: {
-				speed: -1.25,
 				top: 0,
 				left: 100
 			},
@@ -78,21 +62,11 @@ export const state = () => ({
 				top: 0,
 				bottom: 350
 			},
-			description: '',
-			link: '',
-			date: '',
-			role: [''],
-			colors: {
-				background: 360 * 4 / 8,
-				text: ''
-			},
-			images: {
-				cover: '',
-				all: [
-					'',
-					''
-				]
-			},
+			label: 'School Project',
+			description: 'Generative design project, generate a deck of cards based on your personality',
+			link: 'https://lab.tristan-lanoye.com/bicycle-make-your-deck/',
+			date: '2020',
+			role: ['Developer'],
 			tech: [
 				'p5.js',
 				'generative',
@@ -109,14 +83,15 @@ export const state = () => ({
 			type: 'project',
 			status: 'released',
 			title: 'Sabrina Nedjah',
-			cover: {
-				src: 'images/b3.jpg',
-			},
-			scroll: {
-				speed: 2
-			},
+			cover: [
+				{
+					src: 'images/b2.jpg'
+				},
+				{
+					src: 'images/b6.jpg'
+				},
+			],
 			number: {
-				speed: 1.25,
 				top: 0,
 				left: 0
 			},
@@ -124,21 +99,11 @@ export const state = () => ({
 				top: 0,
 				bottom: 350
 			},
-			description: '',
-			link: '',
-			date: '',
-			role: [''],
-			colors: {
-				background: 360 * 5 / 8,
-				text: ''
-			},
-			images: {
-				cover: '',
-				all: [
-					'',
-					''
-				]
-			},
+			label: 'Portfolio Project',
+			description: 'Development of Sabrina Nedjah\'s 2019 portfolio',
+			link: 'https://sabrinanedjah.fr/',
+			date: '2019',
+			role: ['Developer'],
 			tech: [
 				'vue.js',
 				'nuxt.js',
@@ -156,15 +121,16 @@ export const state = () => ({
 		{
 			type: 'project',
 			status: 'released',
-			title: 'CAE',
-			cover: {
-				src: 'images/b4.jpg',
-			},
-			scroll: {
-				speed: 3
-			},
+			title: 'Hetic Campus',
+			cover: [
+				{
+					src: 'images/b2.jpg'
+				},
+				{
+					src: 'images/b6.jpg'
+				},
+			],
 			number: {
-				speed: -1.25,
 				top: 10,
 				left: -5
 			},
@@ -172,21 +138,11 @@ export const state = () => ({
 				top: 0,
 				bottom: 350
 			},
-			description: '',
-			link: '',
-			date: '',
-			role: [''],
-			colors: {
-				background: 360 * 6 / 8,
-				text: ''
-			},
-			images: {
-				cover: '',
-				all: [
-					'',
-					''
-				]
-			},
+			label: 'Freelance Project',
+			description: 'Development of an internal news website for my school',
+			link: 'https://competent-villani-12ef0b.netlify.com/',
+			date: '2020',
+			role: ['Developer'],
 			tech: [
 				'wordpress',
 				'gsap',
@@ -199,14 +155,15 @@ export const state = () => ({
 			type: 'project',
 			status: 'released',
 			title: 'Goblin Hunter',
-			cover: {
-				src: 'images/b5.jpg',
-			},
-			scroll: {
-				speed: 3
-			},
+			cover: [
+				{
+					src: 'images/b2.jpg'
+				},
+				{
+					src: 'images/b6.jpg'
+				},
+			],
 			number: {
-				speed: 1.25,
 				top: 0,
 				left: 100
 			},
@@ -214,21 +171,11 @@ export const state = () => ({
 				top: 0,
 				bottom: 350
 			},
-			description: '',
-			link: '',
-			date: '',
-			role: [''],
-			colors: {
-				background: 360 * 7 / 8,
-				text: ''
-			},
-			images: {
-				cover: '',
-				all: [
-					'',
-					''
-				]
-			},
+			label: 'Personal Project',
+			description: 'Platform game made with Canvas API, no libraries',
+			link: 'https://lab.tristan-lanoye.com/goblin-hunter/',
+			date: '2018',
+			role: ['Developer', 'Design'],
 			tech: [
 				'canvas',
 				'es6',
@@ -243,14 +190,15 @@ export const state = () => ({
 			type: 'project',
 			status: 'released',
 			title: 'React MovieDB',
-			cover: {
-				src: 'images/b6.jpg'
-			},
-			scroll: {
-				speed: 3
-			},
+			cover: [
+				{
+					src: 'images/b2.jpg'
+				},
+				{
+					src: 'images/b6.jpg'
+				},
+			],
 			number: {
-				speed: -1.25,
 				top: 0,
 				left: 0
 			},
@@ -258,55 +206,18 @@ export const state = () => ({
 				top: 0,
 				bottom: 350
 			},
-			description: '',
-			link: '',
-			date: '',
-			role: [''],
-			colors: {
-				background: 360 * 8 / 8,
-				text: ''
-			},
-			images: {
-				cover: '',
-				all: [
-					'',
-					''
-				]
-			},
+			label: 'Personal Project',
+			description: 'My first React project. Movie database with TMDB API',
+			link: 'https://lab.tristan-lanoye.com/react-moviedb/',
+			date: '2017',
+			role: ['Developer', 'Design'],
 			tech: [
 				'react.js',
 				'api',
 				'css grid',
 				'autosuggest'
 			]
-		},
-		// {
-		// 	type: 'project',
-		// 	status: 'soon',
-		// 	title: 'HETIC Interne',
-		//  cover: 'images/b7.jpg',
-		// 	description: '',
-		// 	link: '',
-		// 	date: '',
-		// 	role: [''],
-		// 	colors: {
-		// 		background: '',
-		// 		text: ''
-		// 	},
-		// 	images: {
-		// 		cover: '',
-		// 		all: [
-		// 			'',
-		// 			''
-		// 		]
-		// 	},
-		// 	tech: [
-		// 		'prismic',
-		// 		'vue.js',
-		// 		'nuxt.js',
-		// 		'blog'
-		// 	],
-		// }
+		}
 	],
 	socials: [
 		{
