@@ -205,6 +205,10 @@
 								transition all 0.2s cubic-bezier(.5, 0, 0, 1) 0.1s, opacity 0.1s ease
 							}
 						}
+
+						@media screen and (max-width: 1000px) {
+							display none
+						}
 					}
 
 					.canvas-wrapper {
@@ -295,6 +299,7 @@
 </style>
 
 <script>
+	import MobileDetect from 'mobile-detect'
 	import { TimelineLite } from 'gsap'
 
  	import marqueeText from '@/components/utils/marquee'
@@ -305,24 +310,44 @@
 		props: ['data', 'index'],
 		data() {
 			return {
-				hover: false
+				hover: false,
+				md: undefined
 			}
 		},
 		components: {
 			'marquee-text': marqueeText,
 			'canvas-el': canvasContainer
 		},
-		methods: {
-			onMouseEnter() {
-				this.hover = true
+		computed: {
+			desktop() {
 
-				this.$refs.projectWrapper.classList.add('active')
+			}
+		},
+		methods: {
+			isDesktop() {
+				if(this.md) {
+					return !this.md.mobile() && window.innerWidth >= 1000
+				} else {
+					return window.innerWidth >= 1000
+				}
+			},
+			onMouseEnter() {
+				if(this.isDesktop()) {
+					this.hover = true
+
+					this.$refs.projectWrapper.classList.add('active')
+				}
 			},
 			onMouseLeave() {
-				this.hover = false
+				if(this.isDesktop()) {
+					this.hover = false
 
-				this.$refs.projectWrapper.classList.remove('active')
+					this.$refs.projectWrapper.classList.remove('active')
+				}
 			}
+		},
+		mounted() {
+			this.md = new MobileDetect(window.navigator.userAgent)
 		}
 	}
 </script>

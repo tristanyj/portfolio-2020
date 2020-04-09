@@ -161,14 +161,14 @@
 					}
 
 					float tri(float p) {
-						return mix(p, 1.0 - p, step(0.5, p)) * 2.0;
+						return mix(p, 1.0 - p, step(0.5, p)) * 3.0;
 					}
 
 					void main() {
 						vec2 uv = gl_FragCoord.xy / pixels.xy;
 
 						float p = fract(progress);
-						float delayValue = p * 7.0 - uv.y * 2. + uv.x - 2.0;
+						float delayValue = p * 7.0 - uv.y * 2.0 + uv.x - 2.0;
 						delayValue = clamp(delayValue, 0.0, 1.0);
 
 						vec2 translateValue = p + delayValue * accel;
