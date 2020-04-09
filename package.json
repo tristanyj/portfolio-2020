@@ -1,7 +1,7 @@
 {
 	"name": "tlv3",
 	"version": "1.0.0",
-	"description": "Portfolio V3",
+	"description": "I'm Tristan, a web developer based in Paris. I work mostly with Vuejs & Nuxtjs, and Headless CMSs like Prismic. I'm looking for an internship from July 2020 to december 2020.",
 	"author": "Tristan Lanoye",
 	"private": true,
 	"scripts": {
