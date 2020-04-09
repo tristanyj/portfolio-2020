@@ -1,5 +1,16 @@
 <template>
 	<div class="container-page container-index" data-scroll-container>
+		<img class="preload" src="@/assets/images/me-1.jpg" alt="">
+		<img class="preload" src="@/assets/images/filter-developer.gif" alt="">
+		<img class="preload" src="@/assets/images/filter-generative.gif" alt="">
+		<img class="preload" src="@/assets/images/filter-projects.gif" alt="">
+		<img class="preload" src="@/assets/images/project-1-2.jpg" alt="">
+		<img class="preload" src="@/assets/images/project-2-2.jpg" alt="">
+		<img class="preload" src="@/assets/images/project-3-2.jpg" alt="">
+		<img class="preload" src="@/assets/images/project-4-2.jpg" alt="">
+		<img class="preload" src="@/assets/images/project-5-2.jpg" alt="">
+		<img class="preload" src="@/assets/images/project-6-2.jpg" alt="">
+
 		<div class="content">
 			<intro :data="intro"/>
 			<projects :data="projects"/>
@@ -12,6 +23,11 @@
 	.container-index {
 		max-width 1920px
 		margin 0 auto
+
+		img.preload {
+			visibility hidden
+			width 0
+		}
 
 		.content {
 			position relative
@@ -102,6 +118,18 @@
 						el: document.querySelector('[data-scroll-container]'),
 						smooth: true
 					})
+
+					window.setTimeout(() => {
+						this.scroll.update()
+					}, 2000)
+
+					window.setTimeout(() => {
+						this.scroll.update()
+					}, 4000)
+
+					window.setTimeout(() => {
+						this.scroll.update()
+					}, 6000)
 
 					this.scroll.on('scroll', (e) => {
 						const progress = 360 * e.scroll.y / e.limit

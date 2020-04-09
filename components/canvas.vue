@@ -54,7 +54,7 @@
 			},
 			initScene() {
 				const w = this.width
-				const h = this.height + 120
+				const h = this.height + 250
 
 				this.scene = new THREE.Scene()
 				this.renderer = new THREE.WebGLRenderer()

@@ -1,10 +1,5 @@
 <template>
 	<div class="loading-container" ref="loading" :style="{ background: `hsl(0, ${ sColor }%, 95%)` }">
-		<img class="preload" src="@/assets/images/me-1.jpg" alt="">
-		<img class="preload" src="@/assets/images/filter-developer-2.gif" alt="">
-		<img class="preload" src="@/assets/images/filter-generative.gif" alt="">
-		<img class="preload" src="@/assets/images/filter-projects.gif" alt="">
-
 		<div class="progress-wrapper">
 			<div class="number">
 				{{ current }}
@@ -131,12 +126,12 @@
 			this.container = document.querySelector('.loading-container')
 			this.line = document.querySelector('.inner-bar')
 
-			const images = Array.from(document.querySelectorAll('.preload'))
-			const imgLoad = imagesLoaded(images)
+			const container = document.querySelector('.container-index')
+			const imgLoad = imagesLoaded(container, { background: true })
 
 			imgLoad.on('progress', (instance, image) => {
 				this.loaded++
-				this.progress.to = this.loaded / images.length * 100
+				this.progress.to = this.loaded / instance.images.length * 100
 			})
 
 			window.setTimeout(() => {
