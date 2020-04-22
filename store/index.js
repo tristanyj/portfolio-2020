@@ -144,11 +144,14 @@ export const state = () => ({
 			date: '2020',
 			role: ['Developer'],
 			tech: [
-				'wordpress',
+				'vue.js',
+				'nuxt.js',
+				'prismic',
+				'netlify',
+				'webhooks',
 				'gsap',
 				'swiper',
-				'scrollreveal',
-				'vanillajs'
+				'stylus'
 			]
 		},
 		{
@@ -220,6 +223,13 @@ export const state = () => ({
 		}
 	],
 	socials: [
+		{
+			label: 'github',
+			link: 'https://github.com/tristanyj',
+			class: 'social-github',
+			icon: '/icons/social-github.svg',
+			alt: 'Github'
+		},
 		{
 			label: 'twitter',
 			link: 'https://twitter.com/tristan_yj',
