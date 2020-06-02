@@ -3,9 +3,9 @@
 		<div class="line line-1" data-scroll data-scroll-speed="-2.5">I’m looking for an internship from July 2020 to december 2020.</div>
 		<div class="line" data-scroll data-scroll-speed="-1.5">
 			You can contact me on
-			<a :href="socials[0].link" target="_blank" @mouseenter="onHoverSocial" data-number="4" data-icon="twitter" class="big">Twitter</a>,
-			<a :href="socials[1].link" target="_blank" @mouseenter="onHoverSocial" data-number="4" data-icon="linkedin" class="big">Linkedin</a> or by
-			<a :href="socials[2].link" target="_blank" @mouseenter="onHoverSocial" data-number="4" data-icon="mail" class="big">Mail</a>
+			<a :href="socials[1].link" target="_blank" @mouseenter="onHoverSocial" data-number="4" data-icon="twitter" class="big">Twitter</a>,
+			<a :href="socials[2].link" target="_blank" @mouseenter="onHoverSocial" data-number="4" data-icon="linkedin" class="big">Linkedin</a> or by
+			<a :href="socials[3].link" target="_blank" @mouseenter="onHoverSocial" data-number="4" data-icon="mail" class="big">Mail</a>
 		</div>
 	</div>
 </template>
