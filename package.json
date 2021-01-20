@@ -13,7 +13,7 @@
 	"dependencies": {
 		"cross-env": "^5.2.0",
 		"glslify": "^7.0.0",
-		"gsap": "^2.0.2",
+		"gsap": "^3.6.0",
 		"imagesloaded": "^4.1.4",
 		"mobile-detect": "^1.4.4",
 		"nuxt": "^2.11.0",
